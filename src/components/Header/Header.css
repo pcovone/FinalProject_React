@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+.container-style {
+  background: url("../../assets/fondo-oscuro-abstracto-lineas-verdes-ia-generativa.jpg")
+    center / cover no-repeat;
+  height: 75vh;
+  width: 100vw;
+  margin-left: 0;
+}
+
+.principal-title {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  height: 40vh;
+}
+
+h1 {
+  color: white;
+  text-shadow: 2px 2px 20px #0b5210;
+}
+
+h3 {
+  color: white;
+  font-weight: 100;
+  font-size: 15px;
+}
+
+@media (min-width: 1400px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1495px;
+  }
+}
