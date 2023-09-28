@@ -6,7 +6,6 @@ import { doc } from "firebase/firestore";
 // eslint-disable-next-line react/prop-types
 const ItemDetailContainer = ({ productData }) => {
   const product = productData;
-  const [stock, setStock] = useState(0);
 
   if (!product) {
     return <div>No se encontró el producto</div>;
