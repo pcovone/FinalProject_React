@@ -1,11 +1,12 @@
 import "./ItemListContainer.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 const ItemListContainer = ({ productsData }) => {
+  const navigate = useNavigate();
   const products = productsData;
   return (
-    <div className="wrap-product container">
+    <div className="wrap-product container" style={{ width: "100vw" }}>
       {products.map((product) => (
         <div key={product.id} className="card" style={{ width: "18rem" }}>
           <img
@@ -15,12 +16,20 @@ const ItemListContainer = ({ productsData }) => {
             className="card-img-top"
             alt={product.name}
           />
-          <div className="card-body">
+          <div
+            className="card-body"
+            style={{
+              height: "180px",
+            }}
+          >
             <h5 className="card-title">{product.name}</h5>
             <p className="card-text">{product.description}</p>
-            <Link to={`/item/${product.id}`} className="btn-details">
+            <button
+              className="btn-details"
+              onClick={() => navigate(`/item/${product.id}`)}
+            >
               Ver detalles
-            </Link>
+            </button>
           </div>
         </div>
       ))}

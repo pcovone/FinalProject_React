@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 const useCollection = (collectionName) => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const db = getFirestore();
@@ -14,10 +15,10 @@ const useCollection = (collectionName) => {
           snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
         );
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err)).finally(()=> setLoading(false))
   }, [collectionName]);
 
-  return { products };
+  return { products, loading };
 };
 
 export default useCollection;

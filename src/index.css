@@ -79,6 +79,7 @@ nav {
 .navbar-brand--style {
   font-weight: 600;
   background-image: linear-gradient(120deg, #d4fc79 0%, #58d869 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -104,4 +105,8 @@ nav {
 .dropdown-item {
   font-weight: 400;
   font-size: 13px;
+}
+
+.appcontainer {
+  width: 100vw;
 }
